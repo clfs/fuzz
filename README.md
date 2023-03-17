@@ -1,2 +1,2 @@
 # fuzz
-Fuzzing with ClusterFuzzLite.
+Fuzzing Go with ClusterFuzzLite.
