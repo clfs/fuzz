@@ -2,7 +2,11 @@ module github.com/clfs/fuzz
 
 go 1.20
 
-require github.com/syncthing/syncthing v1.23.2
+require (
+	github.com/golang/protobuf v1.5.2
+	github.com/syncthing/syncthing v1.23.2
+	google.golang.org/protobuf v1.28.1
+)
 
 require (
 	github.com/go-ole/go-ole v1.2.6 // indirect
