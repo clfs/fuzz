@@ -37,4 +37,4 @@ jobs:
         fuzz-seconds: 600
         mode: 'coverage'
         sanitizer: 'coverage'
-        storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/OWNER/STORAGE-REPO-NAME.git
+        storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/clfs/fuzz-storage.git
