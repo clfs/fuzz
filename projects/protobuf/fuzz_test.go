@@ -1,21 +1,14 @@
+// Package protobuf_fuzz contains fuzz tests for google.golang.org/protobuf.
 package protobuf_fuzz
 
 import (
 	"testing"
 
-	proto_deprecated "github.com/golang/protobuf/proto" //lint:ignore SA1019 fuzzing despite deprecation
-	anypb_deprecated "github.com/golang/protobuf/ptypes/any"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/anypb"
 )
 
-func FuzzUnmarshalDeprecated(f *testing.F) {
-	f.Fuzz(func(t *testing.T, b []byte) {
-		var pb anypb_deprecated.Any
-		_ = proto_deprecated.Unmarshal(b, &pb)
-	})
-}
-
+// FuzzUnmarshal ensures proto.Unmarshal does not panic.
 func FuzzUnmarshal(f *testing.F) {
 	f.Fuzz(func(t *testing.T, b []byte) {
 		var pb anypb.Any
