@@ -1,13 +1,17 @@
 # fuzz
+
 Fuzzing with ClusterFuzzLite.
 
-## Projects being fuzzed
+## Projects
 
-folder | project
+The `projects/` folder contains these fuzzing packages:
+
+Folder | Documentation (pkg.go.dev)
 -- | --
 image | [golang.org/x/image]
 jsoniter | [github.com/json-iterator/go]
-protobuf | [github.com/golang/protobuf], [google.golang.org/protobuf]
+protobuf |  [google.golang.org/protobuf]
+protobufold | [github.com/golang/protobuf]
 rclone | [github.com/rclone/rclone]
 syncthing | [github.com/syncthing/syncthing]
 
