@@ -65,7 +65,7 @@ func FuzzTIFFDecode(f *testing.F) {
 			t.Skip()
 		}
 
-		if cfg.Width*cfg.Height > 1e6 {
+		if cfg.Width*cfg.Height > 1e5 {
 			t.Skip()
 		}
 
@@ -74,21 +74,27 @@ func FuzzTIFFDecode(f *testing.F) {
 			t.Skip()
 		}
 
-		var w bytes.Buffer
-		err = tiff.Encode(&w, img, nil)
-		if err != nil {
-			t.Fatalf("failed to encode valid image: %v", err)
-		}
+		for _, c := range []tiff.CompressionType{
+			tiff.Uncompressed,
+			tiff.Deflate,
+		} {
+			var w bytes.Buffer
 
-		img1, err := tiff.Decode(&w)
-		if err != nil {
-			t.Fatalf("failed to decode roundtripped image: %v", err)
-		}
+			err = tiff.Encode(&w, img, &tiff.Options{Compression: c})
+			if err != nil {
+				t.Fatalf("failed to encode valid image: %v", err)
+			}
 
-		got := img1.Bounds()
-		want := img.Bounds()
-		if !got.Eq(want) {
-			t.Fatalf("roundtripped image bounds have changed, got: %s, want: %s", got, want)
+			img1, err := tiff.Decode(&w)
+			if err != nil {
+				t.Fatalf("failed to decode roundtripped image: %v", err)
+			}
+
+			got := img1.Bounds()
+			want := img.Bounds()
+			if !got.Eq(want) {
+				t.Fatalf("roundtripped image bounds have changed, got: %s, want: %s", got, want)
+			}
 		}
 	})
 }
