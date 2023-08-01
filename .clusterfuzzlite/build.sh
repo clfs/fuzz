@@ -17,3 +17,7 @@ compile_native_go_fuzzer $IMPORT_PATH/projects/protobufold FuzzUnmarshal protobu
 compile_native_go_fuzzer $IMPORT_PATH/projects/rclone FuzzFilenameRoundTrip rclone_FuzzFilenameRoundTrip
 compile_native_go_fuzzer $IMPORT_PATH/projects/rclone FuzzFspathParse rclone_FuzzFspathParse
 compile_native_go_fuzzer $IMPORT_PATH/projects/syncthing FuzzSanitizePath syncthing_FuzzSanitizePath
+
+# toml_test.go
+compile_native_go_fuzzer $IMPORT_PATH FuzzTOML_BurntSushi FuzzTOML_BurntSushi
+compile_native_go_fuzzer $IMPORT_PATH FuzzTOML_pelletier FuzzTOML_pelletier
