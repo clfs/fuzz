@@ -4,7 +4,6 @@ go 1.20
 
 require (
 	github.com/BurntSushi/toml v1.3.2
-	github.com/golang/protobuf v1.5.3
 	github.com/json-iterator/go v1.1.12
 	github.com/pelletier/go-toml/v2 v2.0.9
 	github.com/rclone/rclone v1.62.2
