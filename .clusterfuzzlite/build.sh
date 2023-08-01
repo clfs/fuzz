@@ -20,3 +20,7 @@ compile_native_go_fuzzer $IMPORT_PATH/projects/syncthing FuzzSanitizePath syncth
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobuf FuzzProtobuf
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobufJSON FuzzProtobufJSON
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobufText FuzzProtobufText
+
+# toml_test.go
+compile_native_go_fuzzer $IMPORT_PATH FuzzTOML_BurntSushi FuzzTOML_BurntSushi
+compile_native_go_fuzzer $IMPORT_PATH FuzzTOML_pelletier FuzzTOML_pelletier

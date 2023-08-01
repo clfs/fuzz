@@ -3,8 +3,9 @@ module github.com/clfs/fuzz
 go 1.20
 
 require (
-	github.com/golang/protobuf v1.5.3
+	github.com/BurntSushi/toml v1.3.2
 	github.com/json-iterator/go v1.1.12
+	github.com/pelletier/go-toml/v2 v2.0.9
 	github.com/rclone/rclone v1.62.2
 	github.com/syncthing/syncthing v1.23.2
 	golang.org/x/image v0.6.0
