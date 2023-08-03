@@ -8,7 +8,6 @@ export IMPORT_PATH="github.com/clfs/fuzz"
 # TODO: Locate and compile all fuzz targets automatically.
 compile_native_go_fuzzer $IMPORT_PATH/projects/image FuzzBMPDecode image_FuzzBMPDecode
 compile_native_go_fuzzer $IMPORT_PATH/projects/image FuzzOpenTypeParse image_FuzzOpenTypeParse
-compile_native_go_fuzzer $IMPORT_PATH/projects/image FuzzTIFFDecode image_FuzzTIFFDecode
 compile_native_go_fuzzer $IMPORT_PATH/projects/image FuzzWEBPDecode image_FuzzWEBPDecode
 compile_native_go_fuzzer $IMPORT_PATH/projects/jsoniter FuzzParseBytes jsoniter_FuzzParseBytes
 compile_native_go_fuzzer $IMPORT_PATH/projects/jsoniter FuzzUnmarshal jsoniter_FuzzUnmarshal
@@ -20,6 +19,9 @@ compile_native_go_fuzzer $IMPORT_PATH/projects/syncthing FuzzSanitizePath syncth
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobuf FuzzProtobuf
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobufJSON FuzzProtobufJSON
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobufText FuzzProtobufText
+
+# tiff_test.go
+compile_native_go_fuzzer $IMPORT_PATH FuzzTIFF FuzzTIFF
 
 # toml_test.go
 compile_native_go_fuzzer $IMPORT_PATH FuzzTOML_BurntSushi FuzzTOML_BurntSushi
