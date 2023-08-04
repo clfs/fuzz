@@ -56,6 +56,12 @@ func FuzzProtobufJSON(f *testing.F) {
 			t.Skip()
 		}
 
+		for _, r := range mOpts.Indent {
+			if r != ' ' && r != '\t' {
+				t.Skip()
+			}
+		}
+
 		_, err := mOpts.Marshal(&pb)
 		if err != nil {
 			t.Errorf("failed to marshal after unmarshal: %v", err)
@@ -83,6 +89,12 @@ func FuzzProtobufText(f *testing.F) {
 		var pb anypb.Any
 		if err := uOpts.Unmarshal(data, &pb); err != nil {
 			t.Skip()
+		}
+
+		for _, r := range mOpts.Indent {
+			if r != ' ' && r != '\t' {
+				t.Skip()
+			}
 		}
 
 		_, err := mOpts.Marshal(&pb)
