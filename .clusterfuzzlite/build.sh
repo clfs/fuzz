@@ -18,6 +18,9 @@ compile_native_go_fuzzer $IMPORT_PATH/projects/syncthing FuzzSanitizePath syncth
 # graphviz_test.go
 compile_native_go_fuzzer $IMPORT_PATH FuzzGraphviz FuzzGraphviz
 
+# pem_test.go
+compile_native_go_fuzzer $IMPORT_PATH FuzzPEM FuzzPEM
+
 # protobuf_test.go
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobuf FuzzProtobuf
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobufJSON FuzzProtobufJSON
