@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/BurntSushi/toml v1.3.2
+	github.com/awalterschulze/gographviz v2.0.3+incompatible
 	github.com/json-iterator/go v1.1.12
 	github.com/pelletier/go-toml/v2 v2.0.9
 	github.com/rclone/rclone v1.63.1
