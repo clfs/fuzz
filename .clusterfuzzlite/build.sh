@@ -15,6 +15,9 @@ compile_native_go_fuzzer $IMPORT_PATH/projects/rclone FuzzFilenameRoundTrip rclo
 compile_native_go_fuzzer $IMPORT_PATH/projects/rclone FuzzFspathParse rclone_FuzzFspathParse
 compile_native_go_fuzzer $IMPORT_PATH/projects/syncthing FuzzSanitizePath syncthing_FuzzSanitizePath
 
+# graphviz_test.go
+compile_native_go_fuzzer $IMPORT_PATH FuzzGraphviz FuzzGraphviz
+
 # protobuf_test.go
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobuf FuzzProtobuf
 compile_native_go_fuzzer $IMPORT_PATH FuzzProtobufJSON FuzzProtobufJSON
