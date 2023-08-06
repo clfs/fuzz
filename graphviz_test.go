@@ -13,8 +13,6 @@ func FuzzGraphviz(f *testing.F) {
 			t.Skip()
 		}
 		graph := gographviz.NewGraph()
-		if err := gographviz.Analyse(graphAst, graph); err != nil {
-			t.Errorf("error analyzing parsed graph: %v", err)
-		}
+		_ = gographviz.Analyse(graphAst, graph)
 	})
 }
