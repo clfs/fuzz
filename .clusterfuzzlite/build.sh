@@ -5,13 +5,6 @@ go get github.com/AdamKorcz/go-118-fuzz-build/testing
 
 export IMPORT_PATH="github.com/clfs/fuzz"
 
-# TODO: Locate and compile all fuzz targets automatically.
-compile_native_go_fuzzer $IMPORT_PATH/projects/jsoniter FuzzParseBytes jsoniter_FuzzParseBytes
-compile_native_go_fuzzer $IMPORT_PATH/projects/jsoniter FuzzUnmarshal jsoniter_FuzzUnmarshal
-compile_native_go_fuzzer $IMPORT_PATH/projects/rclone FuzzFilenameRoundTrip rclone_FuzzFilenameRoundTrip
-compile_native_go_fuzzer $IMPORT_PATH/projects/rclone FuzzFspathParse rclone_FuzzFspathParse
-compile_native_go_fuzzer $IMPORT_PATH/projects/syncthing FuzzSanitizePath syncthing_FuzzSanitizePath
-
 # graphviz_test.go
 compile_native_go_fuzzer $IMPORT_PATH FuzzGraphviz FuzzGraphviz
 
