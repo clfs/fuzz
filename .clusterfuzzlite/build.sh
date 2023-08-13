@@ -26,7 +26,7 @@ compile_native_go_fuzzer $IMPORT_PATH FuzzProtobufJSON FuzzProtobufJSON
 #compile_native_go_fuzzer $IMPORT_PATH FuzzProtobufText FuzzProtobufText
 
 # sfnt/sfnt_test.go
-compile_native_go_fuzzer $IMPORT_PATH FuzzParse sfnt_FuzzParse
+compile_native_go_fuzzer $IMPORT_PATH/sfnt FuzzParse sfnt_FuzzParse
 
 # tiff_test.go
 compile_native_go_fuzzer $IMPORT_PATH FuzzTIFF FuzzTIFF
