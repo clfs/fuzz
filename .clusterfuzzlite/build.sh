@@ -8,9 +8,6 @@ export IMPORT_PATH="github.com/clfs/fuzz"
 # graphviz_test.go
 compile_native_go_fuzzer $IMPORT_PATH FuzzGraphviz FuzzGraphviz
 
-# pem_test.go
-compile_native_go_fuzzer $IMPORT_PATH FuzzPEM FuzzPEM
-
 compile_native_go_fuzzer $IMPORT_PATH/protobuf FuzzProtoUnmarshal protobuf_FuzzProtoUnmarshal
 compile_native_go_fuzzer $IMPORT_PATH/protobuf FuzzProtojsonUnmarshal protobuf_FuzzProtojsonUnmarshal
 compile_native_go_fuzzer $IMPORT_PATH/protobuf FuzzPrototextUnmarshal protobuf_FuzzPrototextUnmarshal
