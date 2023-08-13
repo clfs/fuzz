@@ -24,8 +24,9 @@ func FuzzDecode(f *testing.F) {
 			t.Skip()
 		}
 
-		if image.Bounds().Dx() != cfg.Width || image.Bounds().Dy() != cfg.Height {
-			t.Error("bounds do not match config")
+		w, h := image.Bounds().Dx(), image.Bounds().Dy()
+		if cfg.Width != w || cfg.Height != h {
+			t.Errorf("decoded image size mismatch: want %dx%d, got %dx%d", cfg.Width, cfg.Height, w, h)
 		}
 	})
 }
