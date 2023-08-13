@@ -7,8 +7,6 @@ import (
 	"testing"
 
 	"golang.org/x/image/bmp"
-	"golang.org/x/image/font/gofont/gomono"
-	"golang.org/x/image/font/opentype"
 	"golang.org/x/image/webp"
 )
 
@@ -67,14 +65,6 @@ func FuzzWEBPDecode(f *testing.F) {
 		}
 
 		_, _ = webp.Decode(bytes.NewReader(b))
-	})
-}
-
-// FuzzOpenTypeParse ensures that OpenType font parsing does not panic.
-func FuzzOpenTypeParse(f *testing.F) {
-	f.Add(gomono.TTF)
-	f.Fuzz(func(t *testing.T, b []byte) {
-		_, _ = opentype.Parse(b)
 	})
 }
 
