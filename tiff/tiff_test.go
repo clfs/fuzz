@@ -1,18 +1,14 @@
-package fuzz
+// Package tiff contains TIFF fuzzing tests.
+package tiff
 
 import (
 	"bytes"
-	"image"
 	"testing"
 
 	"golang.org/x/image/tiff"
 )
 
 func FuzzTIFF(f *testing.F) {
-	var buf bytes.Buffer
-	tiff.Encode(&buf, image.NewRGBA(image.Rect(0, 0, 1, 1)), nil)
-	f.Add(buf.Bytes())
-
 	f.Fuzz(func(t *testing.T, b []byte) {
 		cfg, err := tiff.DecodeConfig(bytes.NewReader(b))
 		if err != nil {
