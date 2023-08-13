@@ -8,7 +8,7 @@ import (
 	"golang.org/x/image/tiff"
 )
 
-func FuzzTIFF(f *testing.F) {
+func FuzzDecode(f *testing.F) {
 	f.Fuzz(func(t *testing.T, b []byte) {
 		cfg, err := tiff.DecodeConfig(bytes.NewReader(b))
 		if err != nil {
