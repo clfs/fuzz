@@ -1,21 +1,14 @@
-// Package image_fuzz contains fuzz tests for golang.org/x/image.
-package image_fuzz
+// Package bmp contains BMP fuzzing tests.
+package bmp
 
 import (
 	"bytes"
-	"image"
 	"testing"
 
 	"golang.org/x/image/bmp"
-	"golang.org/x/image/webp"
 )
 
-// FuzzBMPDecode ensures that BMP decoding is robust.
-func FuzzBMPDecode(f *testing.F) {
-	var buf bytes.Buffer
-	bmp.Encode(&buf, image.NewRGBA(image.Rect(0, 0, 1, 1)))
-	f.Add(buf.Bytes())
-
+func FuzzDecode(f *testing.F) {
 	f.Fuzz(func(t *testing.T, b []byte) {
 		cfg, err := bmp.DecodeConfig(bytes.NewReader(b))
 		if err != nil {
@@ -49,23 +42,3 @@ func FuzzBMPDecode(f *testing.F) {
 		}
 	})
 }
-
-// FuzzWEBPDecode ensures that WEBP decoding does not panic.
-//
-// TODO: Add a seed corpus entry.
-func FuzzWEBPDecode(f *testing.F) {
-	f.Fuzz(func(t *testing.T, b []byte) {
-		cfg, err := webp.DecodeConfig(bytes.NewReader(b))
-		if err != nil {
-			t.Skip()
-		}
-
-		if cfg.Width*cfg.Height > 1e6 {
-			t.Skip()
-		}
-
-		_, _ = webp.Decode(bytes.NewReader(b))
-	})
-}
-
-// TODO: Fuzz VP8 and VP8L decoding.
