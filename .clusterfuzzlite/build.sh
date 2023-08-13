@@ -32,3 +32,5 @@ compile_native_go_fuzzer $IMPORT_PATH/tiff FuzzTIFF tiff_FuzzTIFF
 # toml_test.go
 compile_native_go_fuzzer $IMPORT_PATH FuzzTOML_BurntSushi FuzzTOML_BurntSushi
 compile_native_go_fuzzer $IMPORT_PATH FuzzTOML_pelletier FuzzTOML_pelletier
+
+compile_native_go_fuzzer $IMPORT_PATH/bmp FuzzDecode bmp_FuzzDecode
