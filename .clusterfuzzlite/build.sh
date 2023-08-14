@@ -15,3 +15,4 @@ compile_native_go_fuzzer $IMPORT_PATH/toml FuzzDecode_BurntSushi toml_FuzzDecode
 compile_native_go_fuzzer $IMPORT_PATH/toml FuzzDecode_pelletier toml_FuzzDecode_pelletier
 compile_native_go_fuzzer $IMPORT_PATH/webp FuzzDecode webp_FuzzDecode
 compile_native_go_fuzzer $IMPORT_PATH/yaml FuzzDecode yaml_FuzzDecode
+compile_native_go_fuzzer $IMPORT_PATH/vp8 FuzzDecoder vp8_FuzzDecoder
