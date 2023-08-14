@@ -14,3 +14,4 @@ compile_native_go_fuzzer $IMPORT_PATH/tiff FuzzDecode tiff_FuzzDecode
 compile_native_go_fuzzer $IMPORT_PATH/toml FuzzDecode_BurntSushi toml_FuzzDecode_BurntSushi
 compile_native_go_fuzzer $IMPORT_PATH/toml FuzzDecode_pelletier toml_FuzzDecode_pelletier
 compile_native_go_fuzzer $IMPORT_PATH/webp FuzzDecode webp_FuzzDecode
+compile_native_go_fuzzer $IMPORT_PATH/yaml FuzzDecode yaml_FuzzDecode

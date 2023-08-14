@@ -7,6 +7,7 @@ require (
 	github.com/pelletier/go-toml/v2 v2.0.9
 	golang.org/x/image v0.11.0
 	google.golang.org/protobuf v1.31.0
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
