@@ -6,6 +6,7 @@ go get github.com/AdamKorcz/go-118-fuzz-build/testing
 export IMPORT_PATH="github.com/clfs/fuzz"
 
 compile_native_go_fuzzer $IMPORT_PATH/bmp FuzzDecode bmp_FuzzDecode
+compile_native_go_fuzzer $IMPORT_PATH/ccitt FuzzDecodeIntoGray ccitt_FuzzDecodeIntoGray
 compile_native_go_fuzzer $IMPORT_PATH/hcl FuzzJSONParseWithStartPos hcl_FuzzJSONParseWithStartPos
 compile_native_go_fuzzer $IMPORT_PATH/hcl FuzzParseConfig hcl_FuzzParseConfig
 compile_native_go_fuzzer $IMPORT_PATH/hcl FuzzParseExpression hcl_FuzzParseExpression
@@ -14,9 +15,12 @@ compile_native_go_fuzzer $IMPORT_PATH/hcl FuzzParseTraversalAbs hcl_FuzzParseTra
 compile_native_go_fuzzer $IMPORT_PATH/protobuf FuzzProtojsonUnmarshal protobuf_FuzzProtojsonUnmarshal
 compile_native_go_fuzzer $IMPORT_PATH/protobuf FuzzPrototextUnmarshal protobuf_FuzzPrototextUnmarshal
 compile_native_go_fuzzer $IMPORT_PATH/protobuf FuzzProtoUnmarshal protobuf_FuzzProtoUnmarshal
+compile_native_go_fuzzer $IMPORT_PATH/riff FuzzReader riff_FuzzReader
 compile_native_go_fuzzer $IMPORT_PATH/sfnt FuzzParse sfnt_FuzzParse
 compile_native_go_fuzzer $IMPORT_PATH/tiff FuzzDecode tiff_FuzzDecode
 compile_native_go_fuzzer $IMPORT_PATH/toml FuzzDecode_BurntSushi toml_FuzzDecode_BurntSushi
 compile_native_go_fuzzer $IMPORT_PATH/toml FuzzDecode_pelletier toml_FuzzDecode_pelletier
+compile_native_go_fuzzer $IMPORT_PATH/vp8 FuzzDecoder vp8_FuzzDecoder
+compile_native_go_fuzzer $IMPORT_PATH/vp8l FuzzDecode vp8l_FuzzDecode
 compile_native_go_fuzzer $IMPORT_PATH/webp FuzzDecode webp_FuzzDecode
 compile_native_go_fuzzer $IMPORT_PATH/yaml FuzzDecode yaml_FuzzDecode
